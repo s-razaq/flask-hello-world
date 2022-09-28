@@ -9,5 +9,5 @@ def hello_world():
 
 
 @app.route("/add")
-def hello_world(a, b):
+def add(a, b):
     return a + b
