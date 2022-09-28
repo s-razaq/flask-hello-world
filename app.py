@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -9,5 +9,8 @@ def hello_world():
 
 
 @app.route("/add")
-def add(a, b):
-    return a + b
+def add():
+    a = request.args.get("a")
+    b = request.args.get("b")
+    cal = int(a) + int(b)
+    return str(cal)
